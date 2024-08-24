@@ -1,0 +1,247 @@
+// Variables
+$primary-color: #454951;
+$secondary-color: #f5f7fa;
+$text-color: #333;
+$background-color: #fff;
+$border-color: #e0e0e0;
+$hover-background-color: lighten($primary-color, 10%);
+$sidebar-width: 200px;
+$font-family: 'Roboto', sans-serif;
+
+// Mixins
+@mixin transition($property) {
+  transition: $property 0.3s ease-in-out;
+}
+
+// Profile Page Container
+.profile-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: $secondary-color;
+  font-family: $font-family;
+
+  .profile-sidebar {
+    width: $sidebar-width;
+    background-color: $primary-color;
+    padding: 2rem 1rem;
+    color: #fff;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        @include transition(all);
+        &:hover {
+          background-color: $hover-background-color;
+        }
+      }
+    }
+  }
+
+  .profile-content {
+    flex: 1;
+    background-color: $background-color;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+
+    h1 {
+      color: $primary-color;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid $primary-color;
+      padding-bottom: 0.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      label {
+        margin-bottom: 1rem;
+        color: $text-color;
+        font-weight: 500;
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.5rem;
+          margin-top: 0.5rem;
+          border: 1px solid $border-color;
+          border-radius: 5px;
+          font-family: $font-family;
+          &:focus {
+            border-color: $primary-color;
+            outline: none;
+          }
+        }
+      }
+
+      button[type="submit"] {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        @include transition(background-color);
+        &:hover {
+          background-color: $hover-background-color;
+        }
+      }
+    }
+  }
+}
+
+// Section Content Styles
+.section-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  background-color: lighten($background-color, 5%);
+
+  h2 {
+    color: $primary-color;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 0.5rem;
+  }
+
+  label {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: $text-color;
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+  }
+
+  button[type="button"] {
+    align-self: flex-end;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    @include transition(background-color);
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+
+  button[type="submit"] {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    @include transition(background-color);
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+}
+
+// Specific Section Styles
+.experience-section, 
+.education-section, 
+.projects-section, 
+.certifications-section, 
+.key-skills-section {
+  @extend .section-content;
+
+  .entry {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+
+      input,
+      textarea {
+        padding: 0.5rem;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  button[type="button"] {
+    margin-top: 1rem;
+    @include transition(background-color);
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+}
+
+// Modal Styles
+.react-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-content {
+  background-color: $background-color;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+
+  button {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include transition(background-color);
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+}

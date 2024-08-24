@@ -1,0 +1,174 @@
+.recruiter-dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .job-posting {
+      margin-bottom: 30px;
+  
+      form {
+        display: flex;
+        flex-direction: column;
+  
+        .form-group {
+          margin-bottom: 15px;
+  
+          label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+  
+          input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+          }
+  
+          textarea {
+            resize: vertical;
+            min-height: 100px;
+          }
+        }
+  
+        button {
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: #007bff;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+  
+          &:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+          }
+        }
+  
+        .error {
+          color: red;
+          font-size: 14px;
+          margin-top: 10px;
+        }
+      }
+    }
+  
+    .analytics {
+      margin-bottom: 30px;
+  
+      .search-filter {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+  
+        input {
+          width: 70%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+  
+        select {
+          width: 25%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      }
+  
+      .analytics-list {
+        display: flex;
+        flex-direction: column;
+  
+        .analytics-item {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 15px;
+          margin-bottom: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  
+    .job-post-history {
+      margin-bottom: 30px;
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 15px;
+          margin-bottom: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  
+    .profile-management {
+      .profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  
+        input {
+          width: 200px;
+          padding: 5px;
+          margin-top: 5px;
+        }
+  
+        button {
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: #28a745;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          margin-top: 10px;
+  
+          &:hover {
+            background-color: #218838;
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    .recruiter-dashboard {
+      padding: 10px;
+  
+      .search-filter {
+        flex-direction: column;
+        align-items: flex-start;
+  
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+  
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
