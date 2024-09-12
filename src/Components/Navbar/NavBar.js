@@ -5,9 +5,7 @@ function NavBar()
     return(
 <div className="navbar">
 <div className="left">
-<a href="/"><img src= {logo}></img></a> 
-
-</div>
+<a href="/"><img src= {logo}></img></a></div>
 <div className="right">
 <a href="/">Home</a>
 <a href="/#about">About Us</a>
